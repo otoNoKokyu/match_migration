@@ -8,8 +8,8 @@ module.exports = {
     f1toSimu: async(req,res)=>{
         try{
             const { season , leagueId } = req.body
-            const matchData = await matchModel.find({ season,leagueId })
-            if (matchData.length) return res.status(409).json({message: `migration already done for ${season} for league: ${leagueId}`})
+            // const matchData = await matchModel.find({ season,leagueId })
+            // if (matchData.length) return res.status(409).json({message: `migration already done for ${season} for league: ${leagueId}`})
 
 
                 config = {
@@ -21,7 +21,8 @@ module.exports = {
                     "x-meta-season-id":season,
                     }
                 }
-                await axios(config)
+                axios(config)
+                return res.status(200).json({error: false})
         }catch(err){
             console.log(err)
             return res.status(500).json({error: true, message:"internal server error"})
