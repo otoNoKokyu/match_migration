@@ -14,7 +14,7 @@ module.exports = {
 
                 config = {
                     method: "post",
-                    url: `http://localhost:6000/v1/feeds`,
+                    url: `http://ec2-50-16-115-135.compute-1.amazonaws.com:6001/v1/feeds`,
                     headers: {
                     "x-meta-feed-type": "F1",
                     "x-meta-competition-id":leagueId,

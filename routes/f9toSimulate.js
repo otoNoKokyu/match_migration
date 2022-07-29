@@ -8,7 +8,7 @@ function _buldNetcall(uniqueGameIds, season, leagueId) {
     for (let i = 0; i < uniqueGameIds.length; i += 1) {
         const config = {
             method: "post",
-            url: `http://localhost:6000/v1/feeds`,
+            url: `http://ec2-50-16-115-135.compute-1.amazonaws.com:6001/v1/feeds`,
             headers: {
                 "x-meta-feed-type": "F9",
                 "x-meta-competition-id": leagueId,
