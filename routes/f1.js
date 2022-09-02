@@ -1,5 +1,6 @@
 const matchModel = require("../model/match")
 const axios = require("axios")
+const optaUrl = process.env.OPTA_URL
 
 async function sleep(millis) {
     return new Promise(resolve => setTimeout(resolve, millis));
@@ -14,7 +15,7 @@ module.exports = {
 
                 config = {
                     method: "post",
-                    url: `http://ec2-50-16-115-135.compute-1.amazonaws.com:6001/v1/feeds`,
+                    url: optaUrl,
                     headers: {
                     "x-meta-feed-type": "F1",
                     "x-meta-competition-id":leagueId,
